@@ -38,7 +38,10 @@ interval = 100
 try:
     while True:
         print("Checking for new files...")
-        filesToFolder(sys.argv[1])
+        if len(sys.argv) == 1:
+            filesToFolder()
+        else:
+            filesToFolder(sys.argv[1])
         time.sleep(interval)
 except KeyboardInterrupt:
     print("Exiting...")
